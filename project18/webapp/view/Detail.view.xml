@@ -1,0 +1,79 @@
+<mvc:View  controllerName="project18.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+     
+
+    <Page id="_IDGenPage1" title="{i18n>detailPageTitle}" showNavButton="true" navButtonPress=".onNavBack" >
+      <content>
+        <Table id="_IDGenTable1" items="{OrdersModel>/}">
+          <columns>
+            
+              <Column id="_IDGenColumn2">
+                <Text id="_IDGenText3" text="CustomerID"/>
+              </Column>
+                <Column id="_IDGenColumn3">
+                <Text id="_IDGenText4" text="OrderID"/>
+              </Column>
+              <Column id="_IDGenCdolumn3">
+                <Text id="_IDGendText4" text="EmployeeID"/>
+              </Column>
+              <Column id="_IDGenColumn4">
+                <Text id="_IDGenText5" text="OrderDate"/>
+              </Column>
+              <Column id="_IDGenColumn5">
+                <Text id="_IDGenText6" text="RequiredDate"/>
+              </Column>
+              <Column id="_IDGenColumn6">
+                <Text id="_IDGenText7" text="ShippedDate"/>
+              </Column>
+              <Column id="_IDGenCorlumn6">
+                <Text id="_IDGefnTesxt7" text="ShipVia"/>
+              </Column>
+              <Column id="_IDGernColumn6">
+                <Text id="_IDGefnText7" text="Freight"/>
+              </Column>
+              <Column id="_IDGenrColumn6">
+                <Text id="_IDGenTfext7" text="ShipName"/>
+              </Column>
+              <Column id="_IDGenr2Column6">
+                <Text id="_IDGen2Tfext7" text="ShipAddress"/>
+              </Column>
+              <Column id="_IDG2enrColumn6">
+                <Text id="_IDGe2nTfe2xt7" text="ShipCity"/>
+              </Column>
+              <Column id="_IDGenrColu2mn6">
+                <Text id="_IDGen2Tf2ext7" text="ShipRegion"/>
+              </Column>
+              <Column id="_IDGenrCol2umn6">
+                <Text id="_IDGe2nTfex22t7" text="ShipPostalCode"/>
+              </Column>
+              <Column id="_IDGenrCol222umn6">
+                <Text id="_IDGe2nTfext7" text="ShipCountry"/>
+              </Column>
+          </columns>
+          <items>
+            <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press="onNavToDetails">
+              <cells>
+                <Text id="_IDGenText21"  text="{OrdersModel>CustomerID}"/>
+                <Text id="_IDGenText277"  text="{OrdersModel>OrderID}"/>
+                <Text id="_IDGenText31"  text="{OrdersModel>EmployeeID}"/>
+                <Text id="_IDGenText41"  text="{OrdersModel>OrderDate}"/>
+                <Text id="_IDGenText51"  text="{OrdersModel>RequiredDate}"/>
+                <Text id="_IDGenText61"  text="{OrdersModel>ShippedDate}"/>
+                <Text id="_IDGenTexts61"  text="{OrdersModel>ShipVia}"/>
+                <Text id="_IDGensText61"  text="{OrdersModel>Freight}"/>
+                <Text id="_IDGsenText61"  text="{OrdersModel>ShipName}"/>
+                <Text id="_IDGsenTe3xt61"  text="{OrdersModel>ShipAddress}"/>
+                <Text id="_IDGsen3Text61"  text="{OrdersModel>ShipCity}"/>
+                <Text id="_I3DGsenText61"  text="{OrdersModel>ShipRegion}"/>
+                <Text id="_ID3GsenText61"  text="{OrdersModel>ShipPostalCode}"/>
+                <Text id="_ID3GsenTeext61"  text="{OrdersModel>ShipCountry}"/>
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+      </content>
+    </Page>
+   
+
+</mvc:View>

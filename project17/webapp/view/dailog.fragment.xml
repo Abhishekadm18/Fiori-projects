@@ -1,0 +1,51 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+   xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+
+    <Dialog id="helloDialog2" title="Update Data">
+        <content>
+
+        	<f:SimpleForm id="SimpleFosssrmC1hange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content> 
+				
+				<Label id="_IDGenLasbel1" text="ID" />
+                <Input id="uid"  value="{newemp>/0/ID}" editable="false" width="100%"/>
+                <Label id="_IDGenLsabel22" text="Name" />
+                <Input id="uname"  value="{newemp>/0/name}" width="100%"/>
+                <Label id="_IDGenLasbel3" text="Email" />
+                <Input id="uemail"  value="{newemp>/0/email_id}" width="100%"/>
+                <Label id="_IDGensLabel4" text="Manager" />
+                <Input id="umanager"  value="{newemp>/0/manager}" width="100%"/>
+                
+			</f:content>
+		</f:SimpleForm>
+
+        </content>
+		
+       <Button id="_IDGenBssssuwwtton2" text="Update" press="updatedata" class="sapUiSmallMarginEnd"/>
+	   <Button id="cancel" type="Reject" text="Cancel" press="onCancel2" ariaDescribedBy="rejectButtonDescription genericButtonDescription" class="sapUiSmallMarginEnd">
+            <layoutData>
+                <FlexItemData id="_IDGendFlexItemData2" />
+            </layoutData>
+        </Button>
+    </Dialog>
+
+
+</core:FragmentDefinition>

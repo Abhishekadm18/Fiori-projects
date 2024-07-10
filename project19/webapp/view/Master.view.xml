@@ -1,0 +1,169 @@
+<mvc:View controllerName="project19.controller.Master"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core" 
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:cssgrid="sap.ui.layout.cssgrid"
+    xmlns:f="sap.f">
+    <Page id="page" >
+        <content >
+            <Table id="Table" items="{path: 'EmployeeDataModel>/' , parameters:{expand : 'department'}}" visible="true" mode="MultiSelect"   >
+             <headerToolbar>
+						<Toolbar id="otbSubheader">
+							<Title id="_IDGenTitle1" text="CrudOperation" level="H2"/>
+							<ToolbarSpacer id="_IDGenToolbarSpace1"></ToolbarSpacer>
+							<Button id="saveButton" text="Create" type="Transparent" icon="sap-icon://create" press="onCreate" />
+                            <Button id="UpdateButton" text="Update" type="Transparent" icon="sap-icon://write-new" press="onupdate" />
+                            <Button id="DeleteButton" text="Delete" type="Transparent" icon="sap-icon://delete" press="onDelete" />
+                            
+							
+						</Toolbar>
+					</headerToolbar>
+                <columns>
+                    <Column id="_IDGenColumn1">
+                        <Text id="_IDGenText1" text="ID"/>
+                    </Column>
+                        <Column id="_IDGenColumn2">
+                            <Text id="_IDGenText2" text="Employee Name"/>
+                        </Column>
+                            <Column id="_IDGenColumn3">
+                                <Text id="_IDGenText3" text="Email ID"/>
+                            </Column>
+                                <Column id="_IDGenColumn4">
+                                    <Text id="_IDGenText4" text="Manager Name"/>
+                            </Column>
+                            <Column id="_IDGendColumn4">
+                                    <Text id="_IDGefnText4" text="Department"/>
+                            </Column>
+                </columns>
+                    <items>
+                        <ColumnListItem id="_IDGenColumnListItem1" type="Active" press=".onNavToDetails" >
+                            <cells>
+                                <Text id="_IDGenText5" text="{EmployeeDataModel>ID}"/>
+                                <Text id="_IDGenText6" text="{EmployeeDataModel>name}"/>
+                                <Text id="_IDGenText7" text="{EmployeeDataModel>email_id}"/>
+                                <Text id="_IDGenText8" text="{EmployeeDataModel>manager}"/>
+                                <Text id="_IDGenTfext8" text="{EmployeeDataModel>department/dep_name}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+            </Table> 
+             
+
+
+
+   <VBox id="From"  class="sapUiSmallMargin" visible="false">
+
+        <form:SimpleForm id="_IDGenSimple" 
+            editable="false"
+            layout="ResponsiveGridLayout"
+            title="Add Employee"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false" > 
+               <Label id="_IDGenLabel02" text="Name" width="100%" />
+                  <Input id="name" width="100%" />
+                <Label id="_IDGenLabel03" text="Email ID" width="100%" />
+                   <Input id="emailid"  width="100%" />
+                <Label id="_IDGenLabel302" text="Manager" width="100%"/>
+                   <Input id="managerjh"  width="100%" />
+                <Label id="depp" text="Department" width="100%" />
+                <InputListItem id="department_12"  >
+                      <Select id="department" width="150%">
+                            <core:Item id="_IDGenItem1" key="5b690b74-f80f-4d4b-a26b-ddac619f7641" text="SAP-ABAP" />
+                            <core:Item id="_IDGenItem2" key="48d2698e-c318-4729-9acd-e580e87d04f0" text="SAP-DIGITAL" />
+                       </Select>
+                  </InputListItem>
+      
+       <ToolbarSeparator id="_IDGenToolbarSeparator1"/>
+       <Button id="save" text="Save Data" icon="sap-icon://save" press="onSave">
+                   <layoutData>
+						<FlexItemData id="FlexItemData1"  />
+					</layoutData>
+                </Button>
+
+                <Button id="uhs" type="Reject"
+						text="Cancel"
+						press="onCancel"
+						ariaDescribedBy="rejectButtonDescription genericButtonDescription">
+					<layoutData>
+						<FlexItemData id="_IDGenFlexItemData2" />
+					</layoutData>
+				</Button>
+        </form:SimpleForm>
+    </VBox>
+
+
+            <VBox id="From2"  class="sapUiSmallMargin" visible="false">
+
+        <form:SimpleForm id="_IDGesnSimple" 
+            editable="false"
+            layout="ResponsiveGridLayout"
+            title="Update Employee Details"
+            labelSpanXL="3"
+            labelSpanL="3"
+            labelSpanM="3"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="4"
+            emptySpanL="4"
+            emptySpanM="4"
+            emptySpanS="0"
+            columnsXL="1"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false" > 
+                <Label id="_IDGenLasbel1" text="ID" width="100%"/>
+                <Input id="uid"  value="{newemp>/0/ID}" editable="false" width="100%"/>
+                <Label id="_IDGenLsabel22" text="Name" width="100%"/>
+                <Input id="uname"  value="{newemp>/0/name}" width="100%"/>
+                <Label id="_IDGenLasbel3" text="Email" width="100%"/>
+                <Input id="uemail"  value="{newemp>/0/email_id}" width="100%"/>
+                <Label id="_IDGensLabel4" text="Manager" width="100%"/>
+                <Input id="umanager"  value="{newemp>/0/manager}" width="100%"/>
+                <!-- <Label id="_IDGensdLabel4" text="Department" />
+                <Input id="udepartment"  value="{newemp>/0/department}" width="40%"/> -->
+                <Label id="depp2" text="Department" width="100%" />
+                <InputListItem id="department_123"  >
+                      <Select id="department2" width="150%">
+                            <core:Item id="_IDGenI2tem1" key="5b690b74-f80f-4d4b-a26b-ddac619f7641" text="SAP-ABAP" />
+                            <core:Item id="_IDGenI2tem2" key="48d2698e-c318-4729-9acd-e580e87d04f0" text="SAP-DIGITAL" />
+                       </Select>
+                  </InputListItem>
+               
+                <Button id="save2" text="Update Data"  press="onupdatesave" class="sapUiSmallMarginEnd">
+                   <layoutData>
+                        <FlexItemData id="FlexItemDsata1"  />
+                    </layoutData>
+                </Button>
+
+                <Button id="cancel" type="Reject"
+                        text="Cancel"
+                        press="onCancelupdate"
+                        ariaDescribedBy="rejectButtonDescription genericButtonDescription"
+                        class="sapUiSmallMarginEnd">
+                        
+                    <layoutData>
+                        <FlexItemData id="_IDGendFlexItemData2" />
+                    </layoutData>
+                </Button>
+        </form:SimpleForm>
+    </VBox>
+         
+               
+        </content>
+
+    </Page>		
+</mvc:View>

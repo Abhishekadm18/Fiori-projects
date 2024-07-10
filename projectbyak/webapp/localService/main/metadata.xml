@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="Main" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="Customers" EntityType="Main.Customers"/>
+                <EntitySet Name="Order" EntityType="Main.Order">
+                    <NavigationPropertyBinding Path="CustomerID" Target="Customers"/>
+                </EntitySet>
+            </EntityContainer>
+            <EntityType Name="Customers">
+                <Key>
+                    <PropertyRef Name="CustomerID"/>
+                </Key>
+                <Property Name="CustomerID" Type="Edm.String" Nullable="false"/>
+                <Property Name="CompanyName" Type="Edm.String"/>
+                <Property Name="ContactName" Type="Edm.String"/>
+                <Property Name="ContactTitle" Type="Edm.String"/>
+                <Property Name="Address" Type="Edm.String"/>
+                <Property Name="City" Type="Edm.String"/>
+                <Property Name="PostalCode" Type="Edm.String"/>
+                <Property Name="Country" Type="Edm.String"/>
+                <Property Name="Phone" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="Order">
+                <Key>
+                    <PropertyRef Name="OrderID"/>
+                </Key>
+                <Property Name="OrderID" Type="Edm.Int32" Nullable="false"/>
+                <NavigationProperty Name="CustomerID" Type="Main.Customers">
+                    <ReferentialConstraint Property="CustomerID_CustomerID" ReferencedProperty="CustomerID"/>
+                </NavigationProperty>
+                <Property Name="CustomerID_CustomerID" Type="Edm.String"/>
+                <Property Name="EmployeeID" Type="Edm.Int32"/>
+                <Property Name="OrderDate" Type="Edm.DateTimeOffset"/>
+                <Property Name="RequiredDate" Type="Edm.DateTimeOffset"/>
+                <Property Name="ShippedDate" Type="Edm.DateTimeOffset"/>
+                <Property Name="ShipVia" Type="Edm.Int32"/>
+                <Property Name="Freight" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="ShipName" Type="Edm.String"/>
+                <Property Name="ShipAddress" Type="Edm.String"/>
+                <Property Name="ShipCity" Type="Edm.String"/>
+                <Property Name="ShipRegion" Type="Edm.String"/>
+                <Property Name="ShipPostalCode" Type="Edm.String"/>
+                <Property Name="ShipCountry" Type="Edm.String"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

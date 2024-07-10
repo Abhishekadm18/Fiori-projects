@@ -1,0 +1,42 @@
+<mvc:View controllerName="project16.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:plugins="sap.m.plugins"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Page id="page" title="{i18n>title}">
+        <content>
+			<Button id="fileuploader" text="File Uploader" press="onNavTo"/>
+        <VBox id="_IDGenVBox1" fitContainer="true">
+		<smartFilterBar:SmartFilterBar id="smartFilterBar"
+			entitySet="Employees" persistencyKey="SmartFilter_Explored">
+			
+			<!-- layout data used to make the table growing but the filter bar fixed -->
+			<smartFilterBar:layoutData>
+				<FlexItemData id="_IDGenFlexItemData1" shrinkFactor="0" />
+			</smartFilterBar:layoutData>
+		</smartFilterBar:SmartFilterBar>
+		<smartTable:SmartTable id="_IDGenSmartTable1" entitySet="Employees"
+			smartFilterId="smartFilterBar" enableExport="true" beforeExport="onBeforeExport"
+			useVariantManagement="false" useTablePersonalisation="true" header="Products"
+			showRowCount="true" persistencyKey="SmartTableRefApp_Explored"
+			enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true"
+			showPasteButton="true" paste="onPaste"
+			app:preserveDecimals="false">
+			<Table id="_IDGenTable1" mode="MultiSelect"/>
+				
+
+			
+			<!-- layout data used to make the table growing but the filter bar fixed -->
+			<smartTable:layoutData>
+				<FlexItemData id="_IDGenFlexItemData2" growFactor="1" baseSize="0%" />
+			</smartTable:layoutData>
+			<smartTable:copyProvider>
+				<plugins:CopyProvider id="_IDGenCopyProvider1" />
+			</smartTable:copyProvider>
+		</smartTable:SmartTable>
+	</VBox>
+        </content>
+    </Page>
+</mvc:View>

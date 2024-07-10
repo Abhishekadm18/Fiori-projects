@@ -1,0 +1,34 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" 
+xmlns:unified="sap.ui.unified" 
+controllerName="project16.controller.View2">
+  <VBox id="_IDGenVBox1">
+    <unified:FileUploader id="fileUploader" change="onFileChange" />
+    <Table id="dataTable" items="{/data}">
+      <columns>
+        <Column id="_IDGenColumn1">
+          <Text id="_IDGenText1" text="ID" />
+        </Column>
+        <Column id="_IDGendColumn2">
+          <Text id="_IDGendText2" text="Name" />
+        </Column>
+		<Column id="_IDGddenColumn2">
+          <Text id="_IDGddendText2" text="EmailID" />
+        </Column>
+		<Column id="_IDGenColdumn2">
+          <Text id="_IDGenTexdt2" text="Manager" />
+        </Column>
+      </columns>
+      <items>
+        <ColumnListItem id="_IDGenColumnListItem1">
+          <cells>
+            <Text id="_IDGenText3" text="{ID}" />
+            <Text id="_IDGenText4" text="{name}" />
+			<Text id="_IDGenddText3" text="{email_id}" />
+			<Text id="_IDGenTextd3" text="{manager}" />
+          </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
+  </VBox>
+</mvc:View>
